@@ -31,3 +31,10 @@
   - Program Counter (PC)
   - Counts to 8 bits (0 - 255) or 256 addresses 
   - Basically my maximum number of instructions at a time
+  - Two chained 74HC161's to get to 8 bits since each is 4 bits
+  - AND gate above it for the PoR circuit along with my pull up Reset switch
+  - Will add an opcode reset eventually which is why there is one pin on that AND gate tied to 5v
+
+- Future additions
+  - Working on A and B registers right now
+  - Working on a MAR 
