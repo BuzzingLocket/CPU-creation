@@ -1,5 +1,8 @@
 # General Description
 - This is just going to be a pictures with dates and updates when i work on it, not really a guide or file specs
+- I do not use AI to write the descriptions so I apologize if it a bit messy and confusing
+  - It will be updated as my knowledge increases and I understand more and more
+  - It will be updated when I add more things as well, like more breadboards or expansions like (ALU, SRAM, etc.)
 - There will be a Datasheets of ICs I purchased but the general parts are assumed to be had when making it
   - Things like Resistors, DIP switches, Buttons, Toggles, Capacitors, Diodes
     - I actually dont have regular diodes but only LEDs
@@ -38,3 +41,23 @@
 - Future additions
   - Working on A and B registers right now
   - Working on a MAR 
+
+# September 28th 2026
+<img width="2160" height="2880" alt="image" src="https://github.com/user-attachments/assets/4766cc8c-840b-4faa-939d-dd3adfb8fa44" />
+- Image is the PC from before along with a new board containing control signals
+- Green wire is for control signal
+
+- Changes
+  - Added a Step Counter (SC)
+  - From top down on the rightmost breadboard it is Inverter(04), Binary Counter(161), and a Decoder(138)
+- Purpose
+  - A CPU can't do everything in one pulse
+  - Each instruction requires time to happen
+  - We make this happen by including the SC, which allows for steps to happen each tick the PC counts
+- How
+  - The decoder is set so that when the SC counts to five(101) it resets back to zero by pushing the Y5(pin 10) output of the decoder onto the reset pin of the SC
+  - By resetting the SC we can ensure that each count that the PC counts now contains 5 steps from 0 to 4 that allow for loading registers and running arithmetic
+  - The control signal that enables the PC is referred to as the CE (Count enable)
+  - The other outputs Y0-4 are for other control signals, letting the other parts of the CPU run when there is no other thing running at that instance
+    - For example, if I am loading the register A, Y2 would be active, then Y3 is active and now I am loading register B and when Y4 is active then I can now save the sum of A + B
+  - Not gate is there to ensure that the SC runs on the falling edge of the Clock
