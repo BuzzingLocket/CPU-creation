@@ -61,3 +61,6 @@
   - The other outputs Y0-4 are for other control signals, letting the other parts of the CPU run when there is no other thing running at that instance
     - For example, if I am loading the register A, Y2 would be active, then Y3 is active and now I am loading register B and when Y4 is active then I can now save the sum of A + B
   - Not gate is there to ensure that the SC runs on the falling edge of the Clock
+
+# October 31st 2026
+It has been nearly a month since I have worked on this, not due to loss of interest, but rather due to multiple exams happening. I apologize to mainly myself for not being able to go through with this project. But alas I foresaw this happening a while back, and I did see this coming. Honestly I really regret not doing this over the summer, but I believe the next time I can work on this will be after my exams assuming nothing problematic will occur.
